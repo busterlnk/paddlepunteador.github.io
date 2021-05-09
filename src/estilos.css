@@ -24,8 +24,11 @@ table tbody{
 }
 
 .puntuacion{
-    font-size: 40px;
+    font-size: 50px;
+    -webkit-text-stroke: 2px black;
+    color: transparent; 
     color: #fff;
+    text-align: left;
 }
 
 .saque{
