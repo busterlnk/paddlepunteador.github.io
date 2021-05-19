@@ -55,31 +55,6 @@ const Contador = () => {
         <div>
             {/* <h1>{this.data.PUNTUADOR_FINAL_SAN_REMO_ULTIMATE}</h1> */}
             <table className="tabla-puntos">
-                <thead>
-                    <tr>
-                        {puntoFinal.PUNTUACION !== '""' && puntoFinal.P2PS !==undefined?
-                            <th className="puntuacion">{puntoFinal.PUNTUACION.replace(/['"]+/g, '')}</th> :
-                            <th className="p">P</th>
-                        }
-                        <th></th>
-                        <th></th>
-                        {puntoFinal.P11S !== '""' || puntoFinal.P21S !== '""' ?
-                            <th></th>
-                            :
-                            console.log()
-                        }
-                        {puntoFinal.P12S !== '""' || puntoFinal.P22S !== '""' ?
-                            <th></th>
-                            :
-                            console.log()
-                        }
-                        {puntoFinal.P13S !== '""' || puntoFinal.P23S !== '""' ?
-                            <th></th>
-                            :
-                            console.log()
-                        }
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         {puntoFinal.PAREJA1 !== undefined && puntoFinal.SAQUE1 !== undefined  ?
@@ -109,10 +84,14 @@ const Contador = () => {
                             console.log()
                         }
 
-                        {((puntoFinal.P1PS !== '"0"' || puntoFinal.P2PS !== '"0"' )&&(puntoFinal.PUNTUACION === '"TBR"' || puntoFinal.P1S3 !== '"7"' || puntoFinal.P2S3 !== '"7"')) && puntoFinal.P1PS !==undefined ?
-                            <th className="puntos">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th>
-                            :
-                            console.log()
+                        {((puntoFinal.P1PS !== '""' || puntoFinal.P2PS !== '""' || puntoFinal.PUNTUACION === '"TBR"') && (puntoFinal.P1S3 !== '"7"' || puntoFinal.P2S3 !== '"7"')) && puntoFinal.P1PS !==undefined ?
+                                puntoFinal.PUNTUACION === '"ORO"'?
+                                    <th className="oro">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th> : puntoFinal.PUNTUACION === '"TBR"'?
+                                    <th className="tbr">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th> :
+                                    <th className="puntos">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th>
+
+                                    :
+                            <th className="puntos">0</th>
                         }
                     </tr>
                     <tr>
@@ -120,11 +99,11 @@ const Contador = () => {
                             <th className="parejas" colSpan="1">{puntoFinal.PAREJA2.replace(/['"]+/g, '')}</th> :
                             console.log()
                         }
-
                         {puntoFinal.SAQUE2 !== undefined ?
                             <th className="saque set">{puntoFinal.SAQUE2.replace(/['"]+/g, '')}</th> :
                             <th className="saque"></th>
                         }
+
                         {(puntoFinal.P11S !== '""' || puntoFinal.P21S !== '""' ) && puntoFinal.P11S !==undefined?
                             <th className="set">{puntoFinal.P21S.replace(/['"]+/g, '')}</th>
                             :
@@ -143,10 +122,14 @@ const Contador = () => {
                             console.log()
                         }
 
-                        {((puntoFinal.P1PS !== '"0"' || puntoFinal.P2PS !== '"0"' ) && (puntoFinal.PUNTUACION === '"TBR"' || puntoFinal.P1S3 !== '"7"' || puntoFinal.P2S3 !== '"7"')) && puntoFinal.P2PS !==undefined  ?
-                            <th className="puntos">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th>
-                            :
-                            console.log()
+                        {((puntoFinal.P1PS !== '""' || puntoFinal.P2PS !== '""' || puntoFinal.PUNTUACION === '"TBR"') && (puntoFinal.P1S3 !== '"7"' || puntoFinal.P2S3 !== '"7"')) && puntoFinal.P2PS !==undefined ?
+                                puntoFinal.PUNTUACION === '"ORO"'?
+                                    <th className="oro">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th> : 
+                                        puntoFinal.PUNTUACION === '"TBR"'?
+                                    <th className="tbr">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th> :
+                                    <th className="puntos">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th>
+                                    :
+                            <th className="puntos">0</th>
                         }
                     </tr>
                 </tbody>
