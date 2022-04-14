@@ -58,12 +58,12 @@ const Contador = () => {
                 <tbody>
                     <tr>
                         {puntoFinal.PAREJA1 !== undefined && puntoFinal.SAQUE1 !== undefined  ?
-                            <th className="parejas" colSpan="1">{puntoFinal.PAREJA1.replace(/['"]+/g, '')}</th> :
+                            <th className="parejas" colSpan="1">{puntoFinal.PAREJA1.replace(/['\\"]+/g, '').toUpperCase()}</th> :
                             console.log()
                         }
 
                         {puntoFinal.SAQUE1 !== undefined ?
-                            <th className="saque set">{puntoFinal.SAQUE1.replace(/['"]+/g, '')}</th> :
+                            <th className="saque">{puntoFinal.SAQUE1.replace(/['"]+/g, '')}</th> :
                             <th className="saque"></th>
                         }
                         {(puntoFinal.P11S !== '""' || puntoFinal.P21S !== '""' ) && puntoFinal.P11S !==undefined?
@@ -96,11 +96,11 @@ const Contador = () => {
                     </tr>
                     <tr>
                         {puntoFinal.PAREJA2 !== undefined && puntoFinal.SAQUE2 !== undefined ?
-                            <th className="parejas" colSpan="1">{puntoFinal.PAREJA2.replace(/['"]+/g, '')}</th> :
+                            <th className="parejas" colSpan="1">{puntoFinal.PAREJA2.replace(/['\\"]+/g, '').toUpperCase()}</th> :
                             console.log()
                         }
                         {puntoFinal.SAQUE2 !== undefined ?
-                            <th className="saque set">{puntoFinal.SAQUE2.replace(/['"]+/g, '')}</th> :
+                            <th className="saque">{puntoFinal.SAQUE2.replace(/['"]+/g, '')}</th> :
                             <th className="saque"></th>
                         }
 

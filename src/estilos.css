@@ -18,6 +18,7 @@ table{
 
 table tbody{
     background-color: blue;
+    border: 4px solid #fff;
 }
 
 .p{
@@ -36,12 +37,15 @@ table tbody{
 
 .saque{
     font-size: 50px;
+    width: 85px;
     margin-top: 12px;
+    border-bottom: 4px solid #fff;
 }
 
 .parejas{
     padding-left: 30px;
     margin-right: 0px;
+    border-bottom: 4px solid #fff;
     width: auto;
     min-height: 86px;
     min-width: 300px;
@@ -50,7 +54,7 @@ table tbody{
 }
 
 .puntos{
-    width: 110px;
+    width: 100px;
     padding: 0px 10px;
     background: #fff;
     color: blue;
@@ -58,7 +62,7 @@ table tbody{
 }
 
 .oro{
-    width: 110px;
+    width: 100px;
     padding: 0px 10px;
     background: yellow;
     color: blue;
@@ -66,7 +70,7 @@ table tbody{
 }
 
 .tbr{
-    width: 110px;
+    width: 100px;
     padding: 0px 10px;
     background: red;
     color: #fff;
@@ -74,7 +78,10 @@ table tbody{
 }
 
 .set{
-    width: 85px;
+    width: 75px;
+    border-bottom: 4px solid #fff;
+    border-left: 4px solid #fff;
+    border-right: 4px solid #fff;
 }
 
 .nombres{
