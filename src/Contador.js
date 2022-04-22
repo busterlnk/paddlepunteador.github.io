@@ -84,14 +84,16 @@ const Contador = () => {
                             console.log()
                         }
 
-                        {((puntoFinal.P1PS !== '""' || puntoFinal.P2PS !== '""' || puntoFinal.PUNTUACION === '"TBR"') && (puntoFinal.P1S3 !== '"7"' || puntoFinal.P2S3 !== '"7"')) && puntoFinal.P1PS !==undefined ?
+                        {(puntoFinal.P1PS !== '""' || puntoFinal.P2PS !== '""' || puntoFinal.PUNTUACION === '"TBR"') 
+                        && (puntoFinal.SAQUE1 !== '""'|| puntoFinal.SAQUE2 !== '""' || puntoFinal.P1PS !== '"0"' || puntoFinal.P2PS !== '"0"')
+                        && puntoFinal.P1PS !==undefined ?
                                 puntoFinal.PUNTUACION === '"ORO"'?
                                     <th className="oro">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th> : puntoFinal.PUNTUACION === '"TBR"'?
                                     <th className="tbr">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th> :
                                     <th className="puntos">{puntoFinal.P1PS.replace(/['"]+/g, '')}</th>
 
                                     :
-                            <th className="puntos">0</th>
+                                console.log("No hay puntos")
                         }
                     </tr>
                     <tr>
@@ -122,14 +124,16 @@ const Contador = () => {
                             console.log()
                         }
 
-                        {((puntoFinal.P1PS !== '""' || puntoFinal.P2PS !== '""' || puntoFinal.PUNTUACION === '"TBR"') && (puntoFinal.P1S3 !== '"7"' || puntoFinal.P2S3 !== '"7"')) && puntoFinal.P2PS !==undefined ?
+                        {(puntoFinal.P1PS !== '""' || puntoFinal.P2PS !== '""' || puntoFinal.PUNTUACION === '"TBR"') 
+                        && (puntoFinal.SAQUE1 !== '""'|| puntoFinal.SAQUE2 !== '""' || puntoFinal.P1PS !== '"0"' || puntoFinal.P2PS !== '"0"')
+                        && puntoFinal.P2PS !==undefined ?
                                 puntoFinal.PUNTUACION === '"ORO"'?
                                     <th className="oro">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th> : 
                                         puntoFinal.PUNTUACION === '"TBR"'?
                                     <th className="tbr">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th> :
                                     <th className="puntos">{puntoFinal.P2PS.replace(/['"]+/g, '')}</th>
                                     :
-                            <th className="puntos">0</th>
+                            console.log("No hay puntos")
                         }
                     </tr>
                 </tbody>
