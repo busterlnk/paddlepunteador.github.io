@@ -38,6 +38,7 @@ table tbody{
 .saque{
     font-size: 50px;
     width: 85px;
+    padding-bottom: 10px;
     margin-top: 12px;
     border-bottom: 4px solid #fff;
 }
