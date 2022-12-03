@@ -1,36 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
+import React from 'react';
+import {useAuth} from './contextos/AuthContext';
 import 'firebase/database';
-import './estilos.css'
+import './estilos.css';
+import useObtenerPunteador from './hooks/useObtenerPunteador';
 
 const Contador = () => {
-    const [puntoFinal, cambiarPuntoFinal] = useState({});
+    const [puntoFinal] = useObtenerPunteador();
+    const {usuario} = useAuth();
 
-    const Config = {
-        apiKey: "AIzaSyBgwpoqanque0kR0_S-S6qumKPeEB_wS1w",
-        authDomain: "punteador-9cd23.firebaseapp.com",
-        databaseURL: "https://punteador-9cd23-default-rtdb.firebaseio.com",
-        projectId: "punteador-9cd23",
-        storageBucket: "punteador-9cd23.appspot.com",
-        messagingSenderId: "73532947608",
-        appId: "1:73532947608:web:a14c4007b337aa5c3b64ed"
-    };
-
-    if (!firebase.apps.length) {
-        firebase.initializeApp(Config)
-    }
-    useEffect(() => {
-        firebase.database().ref().on('value', (puntos) => {
-            const list = [];
-            puntos.forEach((punto) => {
-                list.push(punto.val())
-            })
-            cambiarPuntoFinal(list)
-            })
-        }, []);
     return (
         <div>
-            {Array.isArray(puntoFinal) ? puntoFinal.map((partido, index) => {
+            {usuario &&
+            Array.isArray(puntoFinal) ? puntoFinal.map((partido, index) => {
                 console.log(partido)
                     return (<table className="tabla-puntos-1" key={partido+index}>
                         <tbody>

@@ -1,0 +1,41 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+    padding-top: 100px;
+    align-items: center;
+}
+
+.login-container form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: lightseagreen;
+    padding: 20px;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 18px;
+
+}
+
+.login-container form h1{
+    text-align: center;
+}
+
+.login-container form label{
+    margin-top: 50px;
+}
+
+.login-container form input{
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+}
+
+.login-container form Button{
+    margin-top: 100px;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 50%;
+    align-self: center;
+}
